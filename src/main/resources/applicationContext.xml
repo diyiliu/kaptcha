@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+          http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+          http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- 扫描注解Bean -->
+    <context:component-scan base-package="com.diyiliu">
+        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+
+    <!-- 引入资源文件 -->
+    <context:property-placeholder location="classpath:kaptcha.properties"/>
+
+    <!-- 验证码 -->
+    <bean id="kaptchaProducer" class="com.google.code.kaptcha.impl.DefaultKaptcha">
+        <property name="config">
+            <bean class="com.google.code.kaptcha.util.Config">
+                <constructor-arg>
+                    <props>
+                        <prop key="kaptcha.border">${kaptcha.border}</prop>
+                        <prop key="kaptcha.border.color">${kaptcha.border.color}</prop>
+                        <prop key="kaptcha.textproducer.font.color">${kaptcha.font.color}</prop>
+                        <prop key="kaptcha.textproducer.font.size">${kaptcha.font.size}</prop>
+                        <prop key="kaptcha.textproducer.font.names">${kaptcha.font.names}</prop>
+                        <prop key="kaptcha.image.width">${kaptcha.width}</prop>
+                        <prop key="kaptcha.image.height">${kaptcha.height}</prop>
+                        <prop key="kaptcha.session.key">${kaptcha.key}</prop>
+                        <prop key="kaptcha.textproducer.char.length">${kaptcha.char.length}</prop>
+                        <prop key="kaptcha.textproducer.char.string">${kaptcha.char.string}</prop>
+                    </props>
+                </constructor-arg>
+            </bean>
+        </property>
+    </bean>
+</beans>

@@ -1,0 +1,62 @@
+group 'com.diyiliu'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'war'
+
+compileJava {
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+}
+
+compileTestJava {
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+}
+
+ext {
+    kaptchaVersion = '0.0.9'
+    springVersion = '4.2.4.RELEASE'
+    servlertApiVersion = '3.1.0'
+    jspApiVersion = '2.2'
+    jstlVersion = '1.2'
+    aspectjVersion = '1.8.8'
+    logbackVersion = '1.1.3'
+    jacksonVersion = '2.7.3'
+    junitVersion = '4.12'
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    compile(
+            // kaptcha
+            "com.github.axet:kaptcha:$kaptchaVersion",
+            // spring
+            "org.springframework:spring-beans:$springVersion",
+            "org.springframework:spring-context:$springVersion",
+            "org.springframework:spring-aop:$springVersion",
+            "org.springframework:spring-tx:$springVersion",
+            "org.springframework:spring-webmvc:$springVersion",
+            "org.springframework:spring-context-support:$springVersion",
+            // aspectj
+            "org.aspectj:aspectjrt:$aspectjVersion",
+            "org.aspectj:aspectjweaver:$aspectjVersion",
+            // servlet
+            "javax.servlet:javax.servlet-api:$servlertApiVersion",
+            "javax.servlet.jsp:jsp-api:$jspApiVersion",
+            "javax.servlet:jstl:$jstlVersion",
+            // jackson
+            "com.fasterxml.jackson.core:jackson-databind:$jacksonVersion",
+            // logback
+            "ch.qos.logback:logback-classic:$logbackVersion"
+    )
+
+    testCompile(
+            "junit:junit:$junitVersion",
+            "org.springframework:spring-test:$springVersion"
+    )
+}
