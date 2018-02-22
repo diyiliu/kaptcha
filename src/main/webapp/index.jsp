@@ -28,7 +28,7 @@
             <input type="text"  id="result" readonly="readonly" style="color: brown"/>
         </div>
         <div style="margin-left:15px">
-            <input type="submit" class="login-btn" value="登录"/>
+            <input type="button" class="login-btn" value="登录"/>
             <input type="reset" class="login-btn" style="margin-left:10px;" value="重置"/>
         </div>
     </form>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/kaptcha.iml" filepath="$PROJECT_DIR$/kaptcha.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/kaptcha_main.iml" filepath="$PROJECT_DIR$/.idea/modules/kaptcha_main.iml" group="kaptcha" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/kaptcha_test.iml" filepath="$PROJECT_DIR$/.idea/modules/kaptcha_test.iml" group="kaptcha" />
+    </modules>
+  </component>
+</project>
